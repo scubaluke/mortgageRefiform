@@ -1,0 +1,184 @@
+/*
+Theme Name: Avada Child
+Description: Child theme for Avada theme
+Author: ThemeFusion
+Author URI: https://theme-fusion.com
+Template: Avada
+Version: 1.0.0
+Text Domain:  Avada
+*/
+.form-progress {
+  position: relative;
+  display: block;
+  margin: 3rem auto;
+  width: 100%;
+  max-width: 1200px;
+}
+progress {
+  display: block;
+  position: relative;
+  top: 2px;
+  left: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background: #ddd;
+  -webkit-transition: 1s;
+  transition: 1s;
+  will-change: contents;
+  border: none;
+}
+.form-progress-indicator {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 3px solid #ddd;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  will-change: transform;
+}
+.form-progress-indicator.one {
+  left: 0;
+}
+.form-progress-indicator.two {
+  left: 7.14%;
+}
+.form-progress-indicator.three {
+  left: 14.28%;
+}
+.form-progress-indicator.four {
+  left: 21.42%;
+}
+.form-progress-indicator.five {
+  left: 28.56%;
+}
+.form-progress-indicator.six {
+  left: 35.7%;
+}
+.form-progress-indicator.seven {
+  left: 42.84%;
+}
+.form-progress-indicator.eight {
+  left: 49.98%;
+}
+.form-progress-indicator.nine {
+  left: 57.12%;
+}
+.form-progress-indicator.ten {
+  left: 64.26%;
+}
+.form-progress-indicator.eleven {
+  left: 71.4%;
+}
+.form-progress-indicator.twelve {
+  left: 78.54%;
+}
+.form-progress-indicator.thirteen {
+  left: 85.68%;
+}
+.form-progress-indicator.fourteen {
+  left: 92.82%;
+}
+.form-progress-indicator.fifteen {
+  left: 100%;
+}
+.form-progress-indicator.active {
+  -webkit-animation: bounce 0.5s forwards;
+  animation: bounce 0.5s forwards;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  border-color: #005f4f;
+}
+.reversem .form-progress-indicator.one {
+  left: 0;
+}
+.reversem .form-progress-indicator.two {
+  left: 25%;
+}
+.reversem .form-progress-indicator.three {
+  left: 50%;
+}
+.reversem .form-progress-indicator.four {
+  left: 75%;
+}
+.reversem .form-progress-indicator.five {
+  left: 100%;
+}
+.debtm .form-progress-indicator.one {
+  left: 0;
+}
+.debtm .form-progress-indicator.two {
+  left: 20%;
+}
+.debtm .form-progress-indicator.three {
+  left: 40%;
+}
+.debtm .form-progress-indicator.four {
+  left: 60%;
+}
+.debtm .form-progress-indicator.five {
+  left: 80%;
+}
+.debtm .form-progress-indicator.six {
+  left: 100%;
+}
+
+.studentloan .form-progress-indicator.one {
+  left: 0;
+}
+.studentloan .form-progress-indicator.two {
+  left: 33%;
+}
+.studentloan .form-progress-indicator.three {
+  left: 66%;
+}
+.studentloan .form-progress-indicator.four {
+  left: 100%;
+}
+.form-box {
+  max-width: 630px;
+  margin: 0 auto;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 52px;
+  padding: 0.375rem 0.75rem;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4c4b51;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #f3f3f4;
+  border-radius: 0px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-bottom: 20px;
+}
+.form-boxh1 {
+  color: #fff;
+  font-size: 31.25px;
+  line-height: 52px;
+  margin-bottom: 26px;
+}
+
+@media only screen and (max-width: 767px) {
+  .form-progress {
+    max-width: 300px;
+    margin: 2rem auto;
+  }
+  .form-progress-indicator {
+    top: -3px;
+    width: 15px;
+    height: 15px;
+  }
+}
