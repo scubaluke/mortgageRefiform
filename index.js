@@ -39,27 +39,48 @@ setBtn.forEach(btn => btn.addEventListener('click', setValue))
      e.preventDefault()
      e.stopPropagation()
 
+// selectors 
      const formElement = e.target.parentElement.parentElement
      console.log(formElement.dataset.field);
      const nextFormElement = formElement.nextElementSibling
+     if (formElement.dataset.field === 'propertyValue' || formElement.dataset.field === 'additionalCash' ) {
+           formElement.style.display = 'none';
+            nextFormElement.style.display = 'block'
+     }
+     if (formElement.dataset.field === 'state') {
+        const state = document.querySelector('#PROP_ST')
 
-    if (formElement.dataset.field === 'address') {
-        console.log(form.address.value);
-        if (!form.address.value) {
-            form.querySelector('#address')
-            
+         if (!state.value) {
+            // state.insertAdjacentHTML('afterend', '<p>* Required</p>')
+            state.classList.add('required')
+             return
+         } else {
+            formElement.style.display = 'none';
+            nextFormElement.style.display = 'block'
         }
-        // form.address.value
-    }
-
-
-     console.log(e.target);
-     console.log(e.target.parentElement.parentElement);
-
+     }
+    if (formElement.dataset.field === 'address') {
+        if (!form.address.value) {
+         const addressInput = form.querySelector('#address')
+             addressInput.placeholder = '* Required'
+            addressInput.classList.add('required')
+            return
+        }   else if (!form.city.value) {
+            const cityInput = form.querySelector('#city')
+            cityInput.placeholder = '* Required'
+            cityInput.classList.add('required')
+            return
+        } else {
+            formElement.style.display = 'none';
+            nextFormElement.style.display = 'block'
+        }
+    } 
+ 
+ 
+  
+    //  formElement.style.display = 'none';
+    //  nextFormElement.style.display = 'block'
    
-     formElement.style.display = 'none';
-     nextFormElement.style.display = 'block'
-
  }
 
 
@@ -69,8 +90,46 @@ setBtn.forEach(btn => btn.addEventListener('click', setValue))
 
  function sendSubmission(e) {
      e.preventDefault()
-     console.log(form);
-     form.submit();
+    e.stopPropagation()
+
+    const formElement = e.target.parentElement.parentElement
+
+     // email validation
+function emailIsValid (email) {
+	return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+     if (formElement.dataset.field === 'contact') {
+        if (!form.first_name.value) {
+            const fNameInput = form.querySelector('#first_name')
+             fNameInput.placeholder = '* Required'
+            fNameInput.classList.add('required')
+            return
+        } else if (!form.last_name.value) {
+            const lNameInput = form.querySelector('#last_name')
+            lNameInput.placeholder = '* Required'
+            lNameInput.classList.add('required')
+            return
+        }  else if (!emailIsValid(form.email_address.value)) {
+            const emailInput = form.querySelector('#email_address')
+            emailInput.placeholder = '* Required'
+            emailInput.classList.add('required')
+            return
+        }  else if (form.phone_home.value.length != 10 ) {
+            const phoneInput = form.querySelector('#phone_home')
+            phoneInput.placeholder = '* (XXX) XXX-XXXX'
+            phoneInput.classList.add('required')
+            return
+        }   else if (!form.opt_in.value ) {
+            const agreeInput = form.querySelector('#opt_in')
+            agreeInput.insertAdjacentHTML('afterend', '<p>Required</p>') 
+            agreeInput.classList.add('required')
+            return
+        }   else {
+            form.submit()
+        } 
+    }
+  
  }
 
 
